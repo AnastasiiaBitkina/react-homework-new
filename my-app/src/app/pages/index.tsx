@@ -1,17 +1,14 @@
-import React from 'react';
+import Header from '../components/Header';
+import MainPart from '../components/MainPart'
+import Footer from '../components/Footer';
 
-interface Props {
-  name: string;
-  age: number;
-}
 
-const HomePage: React.FC<Props> = ({ name, age }) => {
+const HomePage: React.FC = () => {
   return (
     <div>
-      <h1>Welcome to Next.js!</h1>
-      <p>This is the homepage of your Next.js app.</p>
-      <p>Name: {name}</p>
-      <p>Age: {age}</p>
+      <Header title="Билетопоиск" />
+      <MainPart />
+      <Footer />
     </div>
   );
 };

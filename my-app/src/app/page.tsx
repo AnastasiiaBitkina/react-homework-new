@@ -1,14 +1,28 @@
 import React from 'react';
-import Header from '../app/components/Header';
-import MainPart from '../app/components/MainPart'
-import Footer from './components/Footer';
+import HomePages from '../app/pages/index';
 
 interface Props {
   name: string;
   age: number;
 }
+const Page: React.FC<Props> = ({name, age}) => {
+  return (
+    <div>
+      <HomePages />
+    </div>
+  );
+};
 
-const HomePage: React.FC<Props> = ({ name, age }) => {
+export default Page;
+/*ReactDOM.render(<Page />, document.getElementById('root'));*/
+
+
+/*import Header from '../app/components/Header';
+import MainPart from '../app/components/MainPart'
+import Footer from './components/Footer';
+
+
+const HomePage: React.FC = () => {
   return (
     <div>
       <Header title="Билетопоиск" />
@@ -18,4 +32,4 @@ const HomePage: React.FC<Props> = ({ name, age }) => {
   );
 };
 
-export default HomePage;
+export default HomePage;*/
