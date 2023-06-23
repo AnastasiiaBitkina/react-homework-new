@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../app/components/Header';
+import Footer from './components/Footer';
 
 interface Props {
   name: string;
@@ -13,6 +14,7 @@ const HomePage: React.FC<Props> = ({ name, age }) => {
       <p>This is the homepage of your Next.js app.</p>
       <p>Name: {name}</p>
       <p>Age: {age}</p>
+      <Footer />
     </div>
   );
 };
