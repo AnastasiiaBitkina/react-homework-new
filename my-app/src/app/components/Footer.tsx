@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link'
 import "../styles/footer.css";
 
 const Footer: React.FC = () => {
@@ -6,10 +7,14 @@ const Footer: React.FC = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="qa">Вопросы-ответы</div>
-        <div className="about">О нас</div>
+        <Link href="../pages/about.tsx">
+          <label className="about">О нас</label>
+        </Link>
       </div>
     </footer>
   );
 };
 
 export default Footer;
+
+
