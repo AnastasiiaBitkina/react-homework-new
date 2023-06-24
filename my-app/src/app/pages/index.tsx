@@ -2,7 +2,6 @@ import Header from '../components/Header';
 import MainPart from '../components/MainPart'
 import Footer from '../components/Footer';
 
-
 const HomePage: React.FC = () => {
   return (
     <div>
@@ -14,3 +13,5 @@ const HomePage: React.FC = () => {
 };
 
 export default HomePage;
+
+

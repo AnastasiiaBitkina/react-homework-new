@@ -14,6 +14,9 @@ const Page: React.FC<Props> = ({name, age}) => {
 };
 
 export default Page;
+
+
+
 /*ReactDOM.render(<Page />, document.getElementById('root'));*/
 
 
