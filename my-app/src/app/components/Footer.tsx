@@ -6,7 +6,9 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <div className="qa">Вопросы-ответы</div>
+        <Link href="/qa">
+          <label className="qa">Вопросы-ответы</label>
+        </Link>
         <Link href="/about">
           <label className="about">О нас</label>
         </Link>
