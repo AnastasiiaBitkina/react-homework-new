@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="qa">Вопросы-ответы</div>
-        <Link href="../pages/about.tsx">
+        <Link href="/about">
           <label className="about">О нас</label>
         </Link>
       </div>

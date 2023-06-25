@@ -1,11 +1,7 @@
 import React from 'react';
-import HomePages from '../app/pages/index';
+import HomePages from './pages/index';
 
-interface Props {
-  name: string;
-  age: number;
-}
-const Page: React.FC<Props> = ({name, age}) => {
+const Page: React.FC = () => {
   return (
     <div>
       <HomePages />
