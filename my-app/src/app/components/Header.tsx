@@ -1,6 +1,7 @@
 import React from 'react';
-import '../styles/header.css';
+import Link from 'next/link'
 import { CartIcon } from '../components/MySVGComponent'
+import '../styles/header.css';
 
 interface HeaderProps {
   title: string;
@@ -9,7 +10,9 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ title }) => {
   return (
     <header className='header'>
-      <h1 className='header_title'>{title}</h1>
+      <Link href="/pages">
+        <h1 className='header_title'>{title}</h1>
+      </Link>
       <div className='header_icon'>
         <CartIcon id='svg' />
       </div>
