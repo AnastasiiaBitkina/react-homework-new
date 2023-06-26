@@ -20,7 +20,7 @@ export const CartIcon = ({ id }: Props) => {
 
 export const Plus = ({ id }: Props) => {
   switch (id) {
-    case 'plus-light':
+    case 'plus':
       return (
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="20" height="20" rx="4" fill="#FF5500" />
@@ -34,7 +34,7 @@ export const Plus = ({ id }: Props) => {
 }
 export const PlusLight = ({ id }: Props) => {
   switch (id) {
-    case 'plus':
+    case 'plus-light':
       return (
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="20" height="20" rx="4" fill="#FFA375" />
