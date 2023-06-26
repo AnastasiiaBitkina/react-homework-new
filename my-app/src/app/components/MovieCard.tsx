@@ -8,16 +8,52 @@ import TicketCount from "./TicketCount";
 import { cinemas } from "../../../../simple_api/api/mock";
 import "../styles/moviecard.css";
 
-const MovieCard: React.FC<{ selectedGenre: string; selectedCinema: string }> = ({ selectedGenre, selectedCinema }) => {
+const MovieCard: React.FC<{ selectedGenre: string; 
+  selectedCinema: string;
+  selectedMovieTitle: string; 
+}> = ({ selectedGenre, selectedCinema,selectedMovieTitle }) => {
   const router = useRouter();
 
-  const filteredMovies = movies.filter((movie) => {
+  /*const filteredMovies = movies.filter((movie) => {
     if (selectedGenre && selectedCinema) {
       return movie.genre === selectedGenre && cinemas.find(cinema => cinema.movieIds.includes(movie.id))?.name === selectedCinema;
     } else if (selectedGenre) {
       return movie.genre === selectedGenre;
     } else if (selectedCinema) {
       return cinemas.find(cinema => cinema.movieIds.includes(movie.id))?.name === selectedCinema;
+    } else {
+      return true;
+    }
+  });*/
+
+  const filteredMovies = movies.filter((movie) => {
+    const matchesGenre =
+      selectedGenre && movie.genre === selectedGenre;
+    const matchesCinema =
+      selectedCinema &&
+      cinemas.find((cinema) =>
+        cinema.movieIds.includes(movie.id)
+      )?.name === selectedCinema;
+    const matchesMovieTitle =
+      selectedMovieTitle &&
+      movie.title
+        .toLowerCase()
+        .includes(selectedMovieTitle.toLowerCase());
+
+    if (selectedGenre && selectedCinema && selectedMovieTitle) {
+      return matchesGenre && matchesCinema && matchesMovieTitle;
+    } else if (selectedGenre && selectedCinema) {
+      return matchesGenre && matchesCinema;
+    } else if (selectedGenre && selectedMovieTitle) {
+      return matchesGenre && matchesMovieTitle;
+    } else if (selectedCinema && selectedMovieTitle) {
+      return matchesCinema && matchesMovieTitle;
+    } else if (selectedGenre) {
+      return matchesGenre;
+    } else if (selectedCinema) {
+      return matchesCinema;
+    } else if (selectedMovieTitle) {
+      return matchesMovieTitle;
     } else {
       return true;
     }

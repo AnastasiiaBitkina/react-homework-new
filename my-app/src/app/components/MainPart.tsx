@@ -21,8 +21,6 @@ const MainPart: React.FC = () => {
     setSelectedMovieTitle(title);
   }
   
-  
-
   return (
     <div className="main-part">
       <Filter onGenreChange={setSelectedGenre}

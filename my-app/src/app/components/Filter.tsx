@@ -9,14 +9,19 @@ import "../styles/filter.css";
 const Filter: React.FC<{
   onGenreChange: (genre: string) => void;
   onCinemaChange: (cinema: string) => void;
-}> = ({ onGenreChange, onCinemaChange }) => {
+  onMovieTitleChange: (title: string) => void;
+}> = ({ onGenreChange, onCinemaChange, onMovieTitleChange }) => {
   const uniqueGenres = Array.from(new Set(movies.map((movie) => movie.genre)));
 
   const [cinemaList, setCinemaList] = useState<string[]>([]);
 
+  const [movieTitle, setMovieTitle] = useState<string>("");
+
+
   useEffect(() => {
     setCinemaList(cinemas.map((cinema) => cinema.name));
   }, []);
+
 
   const handleGenreChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedGenre = e.target.value;
@@ -28,13 +33,23 @@ const Filter: React.FC<{
     onCinemaChange(selectedCinema);
   };
 
+ const handleMovieTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const title = e.target.value;
+    onMovieTitleChange(title);
+  };
+ 
+
 
   return (
     <div className="filter">
       <label className="filter-label">Фильтр поиска</label>
       <div className="input-item">
         <label className="input-name">Название</label>
-        <input className="input" />
+        <input
+          className="input"
+          value={movieTitle}
+          onChange={handleMovieTitleChange}
+        />
       </div>
       <div className="select-genre-item">
         <label className="genre-name">Жанр</label>
