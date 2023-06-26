@@ -2,6 +2,7 @@ import React from "react";
 import { Plus } from "../components/MySVGComponent";
 import { Minus } from "../components/MySVGComponent";
 import { MinusBright } from "../components/MySVGComponent";
+import { Close } from "../components/MySVGComponent";
 import "../styles/ticket-count.css"
 
 const TicketCount: React.FC<{
@@ -25,6 +26,11 @@ const TicketCount: React.FC<{
       <div className="plus" onClick={(e) => { e.stopPropagation(); onIncrement(); }}>
         <Plus id="plus" />
       </div>
+      {count !== 0 && (
+        <div className="close">
+          <Close id="close" />
+        </div>
+      )}
     </div>
   );
 };
