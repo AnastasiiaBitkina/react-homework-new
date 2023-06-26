@@ -19,15 +19,15 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
     return (
         <div>
             {items.map((item, index, content) => (
-                <div key={index}>
-                    <span
+                <div className="accordion-item" key={index}>
+                    <span className="accordion-card"
                         onClick={() => handleClick(index)}
-                        style={{ cursor: 'pointer', fontWeight: 'bold' }}
+                        style={{ cursor: 'pointer'}}
                     >
                         {item}
                     </span>
                     {activeIndex === index && (
-                        <span style={{ display: 'block', marginTop: '5px' }}>
+                        <span className="accordion-content" style={{ display: 'block', marginTop: '5px' }}>
                             {content[index]}.
                         </span>
                     )}
