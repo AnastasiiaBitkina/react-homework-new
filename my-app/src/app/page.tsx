@@ -1,5 +1,5 @@
 import React from 'react';
-import HomePages from './pages/index';
+import HomePages from './pages/page';
 
 const Page: React.FC = () => {
   return (
