@@ -6,6 +6,7 @@ import Filter from "../components/Filter"
 import MovieCard from "./MovieCard";
 
 const MainPart: React.FC = () => {
+
   const [selectedGenre, setSelectedGenre] = useState("");
   return (
     <div className="main-part">
