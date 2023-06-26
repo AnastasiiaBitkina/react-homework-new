@@ -8,10 +8,19 @@ import MovieCard from "./MovieCard";
 const MainPart: React.FC = () => {
 
   const [selectedGenre, setSelectedGenre] = useState("");
+
+  const [selectedCinema, setSelectedCinema] = useState("");
+
+  const handleCinemaChange = (cinema: string) => {
+    setSelectedCinema(cinema);
+  };
+
   return (
     <div className="main-part">
-        <Filter onGenreChange={setSelectedGenre}  />
-        <MovieCard selectedGenre={selectedGenre} />
+      <Filter onGenreChange={setSelectedGenre}
+        onCinemaChange={handleCinemaChange} />
+      <MovieCard selectedGenre={selectedGenre}
+      selectedCinema={selectedCinema}  />
     </div>
   );
 };

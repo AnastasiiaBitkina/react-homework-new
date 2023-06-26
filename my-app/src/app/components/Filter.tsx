@@ -6,8 +6,12 @@ import { cinemas } from "../../../../simple_api/api/mock";
 import "../styles/filter.css";
 
 
-const Filter: React.FC<{ onGenreChange: (genre: string) => void }> = ({ onGenreChange }) => {
+const Filter: React.FC<{
+  onGenreChange: (genre: string) => void;
+  onCinemaChange: (cinema: string) => void;
+}> = ({ onGenreChange, onCinemaChange }) => {
   const uniqueGenres = Array.from(new Set(movies.map((movie) => movie.genre)));
+
   const [cinemaList, setCinemaList] = useState<string[]>([]);
 
   useEffect(() => {
@@ -18,6 +22,12 @@ const Filter: React.FC<{ onGenreChange: (genre: string) => void }> = ({ onGenreC
     const selectedGenre = e.target.value;
     onGenreChange(selectedGenre);
   };
+
+  const handleCinemaChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedCinema = e.target.value;
+    onCinemaChange(selectedCinema);
+  };
+
 
   return (
     <div className="filter">
@@ -41,14 +51,16 @@ const Filter: React.FC<{ onGenreChange: (genre: string) => void }> = ({ onGenreC
       </div>
       <div className="select-cinema-item">
         <label className="cinema-name">Кинотеатр</label>
-        <select className="select-cinema">
-          <option className="select-cinema">Выберите кинотеатр</option>
+        <select className="select-cinema" onChange={handleCinemaChange}>
+          <option className="select-cinema"
+            value="">Выберите кинотеатр</option>
           {cinemaList.map((cinema, index) => (
             <option key={index} value={cinema}>
               {cinema}
             </option>
           ))}
         </select>
+
       </div>
     </div>
   );

@@ -5,14 +5,23 @@ import { movies } from "../../../../simple_api/api/mock";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import TicketCount from "./TicketCount";
+import { cinemas } from "../../../../simple_api/api/mock";
 import "../styles/moviecard.css";
 
-const MovieCard: React.FC<{ selectedGenre: string }> = ({ selectedGenre }) => {
+const MovieCard: React.FC<{ selectedGenre: string; selectedCinema: string }> = ({ selectedGenre, selectedCinema }) => {
   const router = useRouter();
 
-  const filteredMovies = selectedGenre
-    ? movies.filter((movie) => movie.genre === selectedGenre)
-    : movies;
+  const filteredMovies = movies.filter((movie) => {
+    if (selectedGenre && selectedCinema) {
+      return movie.genre === selectedGenre && cinemas.find(cinema => cinema.movieIds.includes(movie.id))?.name === selectedCinema;
+    } else if (selectedGenre) {
+      return movie.genre === selectedGenre;
+    } else if (selectedCinema) {
+      return cinemas.find(cinema => cinema.movieIds.includes(movie.id))?.name === selectedCinema;
+    } else {
+      return true;
+    }
+  });
 
   const [ticketCounts, setTicketCounts] = useState<{ [key: string]: number }>(
     {}
