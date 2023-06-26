@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import TicketCount from "./TicketCount";
 import { cinemas } from "../../../../simple_api/api/mock";
 import "../styles/moviecard.css";
+import Link from "next/link";
 
 const MovieCard: React.FC<{ selectedGenre: string; 
   selectedCinema: string;
@@ -64,7 +65,7 @@ const MovieCard: React.FC<{ selectedGenre: string;
   );
 
   const handleClick = (movieId: string) => {
-    router.push(`/movies/${movieId}`);
+    router.push(`../pages/movies/${movieId}`);
   };
 
   const handleIncrement = (movieId: string) => {

@@ -35,6 +35,7 @@ const Filter: React.FC<{
 
  const handleMovieTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const title = e.target.value;
+    setMovieTitle(title);
     onMovieTitleChange(title);
   };
  
@@ -48,7 +49,7 @@ const Filter: React.FC<{
         <input
           className="input"
           value={movieTitle}
-          onChange={handleMovieTitleChange}
+          onInput={handleMovieTitleChange}
         />
       </div>
       <div className="select-genre-item">
