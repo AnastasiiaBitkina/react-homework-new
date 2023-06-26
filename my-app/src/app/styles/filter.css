@@ -49,6 +49,13 @@
     background: var(--background-primary, #FFF);
 }
 
+.select-default-genre {
+    color: var(--text-tertiary, #999FA6);
+    font-size: 14px;
+    font-family: SF Pro Text;
+    line-height: 20px;
+}
+
 .select-genre,
 .select-cinema {
     display: flex;
