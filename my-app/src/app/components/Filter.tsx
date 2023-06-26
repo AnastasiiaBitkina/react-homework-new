@@ -2,11 +2,17 @@
 
 import React, { useState, useEffect } from "react";
 import { movies } from "../../../../simple_api/api/mock";
+import { cinemas } from "../../../../simple_api/api/mock";
 import "../styles/filter.css";
 
 
-const Filter: React.FC<{ onGenreChange: (genre: string) => void }>= ({ onGenreChange }) => {
+const Filter: React.FC<{ onGenreChange: (genre: string) => void }> = ({ onGenreChange }) => {
   const uniqueGenres = Array.from(new Set(movies.map((movie) => movie.genre)));
+  const [cinemaList, setCinemaList] = useState<string[]>([]);
+
+  useEffect(() => {
+    setCinemaList(cinemas.map((cinema) => cinema.name));
+  }, []);
 
   const handleGenreChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedGenre = e.target.value;
@@ -21,12 +27,12 @@ const Filter: React.FC<{ onGenreChange: (genre: string) => void }>= ({ onGenreCh
         <input className="input" />
       </div>
       <div className="select-genre-item">
-      <label className="genre-name">Жанр</label>
+        <label className="genre-name">Жанр</label>
         <select className="select-genre" onChange={handleGenreChange}>
-          <option 
-          className="select-default-genre"
-          value="">Выберите жанр</option>
-        {uniqueGenres.map((genre, index) => (
+          <option
+            className="select-default-genre"
+            value="">Выберите жанр</option>
+          {uniqueGenres.map((genre, index) => (
             <option key={index} value={genre}>
               {genre}
             </option>
@@ -35,7 +41,14 @@ const Filter: React.FC<{ onGenreChange: (genre: string) => void }>= ({ onGenreCh
       </div>
       <div className="select-cinema-item">
         <label className="cinema-name">Кинотеатр</label>
-        <select className="select-cinema"></select>
+        <select className="select-cinema">
+          <option className="select-cinema">Выберите кинотеатр</option>
+          {cinemaList.map((cinema, index) => (
+            <option key={index} value={cinema}>
+              {cinema}
+            </option>
+          ))}
+        </select>
       </div>
     </div>
   );
