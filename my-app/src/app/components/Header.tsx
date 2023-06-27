@@ -18,7 +18,9 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
       </Link>
       <div className='header_icon'>
         <span></span>
-        <CartIcon id='svg' />
+        <Link href="/cart">
+          <CartIcon id='svg' />
+        </Link>
       </div>
     </header>
   );
