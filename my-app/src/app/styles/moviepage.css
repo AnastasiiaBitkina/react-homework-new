@@ -1,0 +1,104 @@
+.movie-page {
+    min-height: 1080px;
+}
+
+.movie-card {
+    display: flex;
+    width: 1856px;
+    height: auto;
+    padding: 24px;
+    align-items: flex-start;
+    gap: 32px;
+    border-radius: 8px;
+    background: #FFF;
+    margin-top: 108px;
+    margin-left: 24px;
+}
+
+.movie-pic {
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: lightgray 50% / cover no-repeat;
+}
+
+.movie-title {
+    color: var(--text-primary, #1B1F23);
+    font-size: 32px;
+    font-family: Roboto;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 24px;
+}
+
+.movie-genre {
+    display: flex;
+    color: var(--text-primary, #1B1F23);
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+
+.movie-year {
+    display: flex;
+    color: var(--text-primary, #1B1F23);
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+
+.movie-rating {
+    display: flex;
+    color: var(--text-primary, #1B1F23);
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+
+.movie-director {
+    display: flex;
+    color: var(--text-primary, #1B1F23);
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 32px;
+}
+
+.movie-description {
+    color: var(--text-primary, #1B1F23);
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 16px;
+}
+
+.movie-description-content {
+    color: var(--text-primary, #1B1F23);
+    font-size: 16px;
+    font-family: Roboto;
+    line-height: 24px;
+}
+
+.movie-genre-content,
+.movie-year-content,
+.movie-rating-content,
+.movie-director-content {
+    margin-left: 5px;
+    color: var(--text-primary, #1B1F23);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-family: Roboto;
+    line-height: 24px;
+}
+.loading{
+    margin-left: 24px;
+}
