@@ -1,20 +1,34 @@
 import React from 'react';
-import Header from '../app/components/Header';
+import HomePages from './pages/page';
 
-interface Props {
-  name: string;
-  age: number;
-}
-
-const HomePage: React.FC<Props> = ({ name, age }) => {
+const Page: React.FC = () => {
   return (
     <div>
-      <Header title="Билетопоиск" />
-      <p>This is the homepage of your Next.js app.</p>
-      <p>Name: {name}</p>
-      <p>Age: {age}</p>
+      <HomePages />
     </div>
   );
 };
 
-export default HomePage;
+export default Page;
+
+
+
+/*ReactDOM.render(<Page />, document.getElementById('root'));*/
+
+
+/*import Header from '../app/components/Header';
+import MainPart from '../app/components/MainPart'
+import Footer from './components/Footer';
+
+
+const HomePage: React.FC = () => {
+  return (
+    <div>
+      <Header title="Билетопоиск" />
+      <MainPart />
+      <Footer />
+    </div>
+  );
+};
+
+export default HomePage;*/

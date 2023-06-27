@@ -1,5 +1,8 @@
-import React from 'react';
-/*import '../styles/global.css';*/
+'use client'
+
+import React, { useState } from 'react';
+import Link from 'next/link'
+import { CartIcon } from '../components/MySVGComponent'
 import '../styles/header.css';
 
 interface HeaderProps {
@@ -7,9 +10,18 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ title }) => {
+  const [ticketCounts, setTicketCounts] = useState("");
   return (
-    <header className="header">
-      <h1>{title}</h1>
+    <header className='header'>
+      <Link href="/pages">
+        <h1 className='header_title'>{title}</h1>
+      </Link>
+      <div className='header_icon'>
+        <span></span>
+        <Link href="/cart">
+          <CartIcon id='svg' />
+        </Link>
+      </div>
     </header>
   );
 };

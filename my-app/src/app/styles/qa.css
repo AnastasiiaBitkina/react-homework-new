@@ -1,0 +1,32 @@
+.main {
+    max-width: 1920px;
+    width: 100%;
+    height: 1080px;
+    background: #F5F5F5;
+    margin-top: 108px;
+}
+
+.qa-content {
+    display: block;
+}
+
+.qa-title-item {
+    width: 100%;
+    max-width: 1856px;
+    height: 80px;
+    background-color: #FFF;
+    margin-left: 32px;
+    margin-right: 32px;
+    border-radius: 8px;
+}
+
+.qa-title {
+    color: var(--text-primary, #1B1F23);
+    font-size: 32px;
+    font-family: Roboto;
+    font-weight: 600;
+    line-height: 32px;
+    margin-left: 24px;
+    position: relative;
+    top: 24px;
+}

@@ -1,0 +1,29 @@
+.footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    max-width: 1920px;
+    height: 86px;
+    padding: 24px 32px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    background: var(--gray-1, #333);
+}
+.footer-content{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.qa {
+    color: #FFF;
+    font-size: 20px;
+    font-family: Roboto;
+}
+
+.about {
+    color: #FFF;
+    font-size: 20px;
+    font-family: Roboto;
+}
